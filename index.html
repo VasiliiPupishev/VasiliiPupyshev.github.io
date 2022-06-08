@@ -1,0 +1,374 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="robots" content="noodp">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>Василий Пупышев</title>
+		<link rel="shortcut icon" href="img/man.png">
+		
+		<script src="https://kit.fontawesome.com/cf2e8309a4.js" crossorigin="anonymous"></script>
+
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+		
+        <link rel="stylesheet" type="text/css" href="css/plugins.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+   
+    <body>
+	<div style="background-image: url(../img/maneq.png);"></div>
+        <div class="preloader">
+            <div class="spinner"></div>
+        </div>
+
+
+        <div class="content-area">
+            <div class="content-area-inner">
+                <section id="intro" style="background-color: #ecf5ed ; border-radius:1rem; height:100vh;">
+					<div style="padding-top: 1vh;" class="intro-part"></div>
+                    <div class="container-mid">
+						<div class="animation-container animation-fade-down" data-animation-delay="0">
+							<h1>Василий Пупышев</h1>
+						</div>
+						<div class="animation-container animation-fade-left" data-animation-delay="300">
+							<p class="subline">
+								<br>🎮 Разрабатываю игровые механики на Unreal Engine
+								<br>📚 Учусь и развиваюсь
+								<br>🚴 Увлекаюсь велопутешествиями
+							</p>
+						</div>
+						<div class="lookbutton animation-container animation-fade-up" data-animation-delay="600">
+							<a href="#about-examples" class="lookbutton smooth-scroll">Посмотреть мои работы<i class="fa fa-search"></i></a>
+						</div>
+                    </div>
+					<div style="padding-bottom: 1vh;" class="intro-part"></div>
+                </section>
+				
+				<section id="about-examples" style="background-color: #ecf5ed ;">
+					<div class="container-mid">
+						<h3 style="padding-top:1vh; padding-bottom:1vh;" class="headline scroll-animation-fade-up">Мои игровые механики</h3>
+						<p class="scroll-animated-from-right">
+							<section id="examples">
+								<div class="showcase">
+									<div id="item_1" class="item scroll-animated-from-right">
+										<div id="info_1" class="info-even">
+											<div class="container-mid">
+												<h4>Стрельба и Оружие</h4>
+											</div>
+										</div>
+										<div id="example_1" class="example-description">
+											<div class="example-header">
+												<div style="z-index:2" class="container-mid">
+													<h4>Стрельба и Оружие</h4>
+												</div>
+												<div class="background-image" style="background-color:#aec5aa; /*/*background-image: url(img/shot.jpg);*/*/ z-index:0;"></div>
+											</div>
+											<img class="example-image" style="width: 90%; margin-bottom: 1vh;" src="img/ItemFire.gif"  frameborder="0"/img>
+											<h5>Описание</h5>
+											<h6>Персонаж может стрелять из оружия. Выстрелы производятся из точки взгляда. Есть два режима стрельбы - одиночные выстрелы и автоматическая стрельба.</h6>
+											<h5>Реализация класса огнестрельного оружия</h5>
+											<ul>
+												<li>Визуальное представление и дополнительные данные.</li>
+												<li>Методы взаимодействия с оружием (выстрел, прицеливание, осмотр, перезарядка).</li>
+												<li>ActorComponent(BarelComponent) реализует дуло оружия, и логику выстрела.</li>
+											</ul>
+											<h5>Реализация стрельбы</h5>
+											<ul>
+												<li>PlayerController обрабатывает ввод и вызывает функцию у кэшированного персонажа.</li>
+												<li>Кэшированный персонаж проверяет возможность выполнения действия, и вызывает функцию ActorComponent'а, реализующего инвентарь и разгрузку.</li>
+												<li>Инвентарь и разгрузка проверяет возможность выполнения выстрела, и вызывают функцию у оружия, которое сейчас экипировано.</li>
+												<li>Оружие завершает все действия, так как стрельба - это приоритетное действие, и вызывает функцию выстрела у BarelComponent, запуская таймер для повторения, если автоматический режим стрельбы.</li>
+												<li>BarelComponent производит расчет разброса, производит hitscan, нанося урон.</li>
+											</ul>
+											<div class="example-footer">
+												<h5>Основные инструменты и методы</h5>
+												<p>C++, Hitscan, Наследование, Интерфейсы, DataTable, Структуры, Enum</p>
+											</div>
+										</div>
+									<div id="bg_1" class="background-image" style="/*/*background-image: url(img/shot.jpg);*/*/ z-index:-1; background-color:#d0e1ca"></div>
+									</div>
+									
+									<div id="item_2" class="item scroll-animated-from-left">
+										<div id="info_2" class="info-odd">
+											<div class="container-mid">
+												<h4>Инвентарь и Разгрузка</h4>
+											</div>
+										</div>
+										<div id="example_2" class="example-description">
+											<div class="example-header">
+												<div style="z-index:2" class="container-mid">
+													<h4>Инвентарь и Разгрузка</h4>
+												</div>
+												<div class="background-image" style="/*background-image: url(img/shot.jpg);*/ z-index:0; background-color:#aec5aa"></div>
+											</div>
+											<img class="example-image" style="width: 90%; margin-bottom: 1vh;" src="img/ItemLoadout.png"  frameborder="0"/img>
+											<h5>Описание</h5>
+											<h6>Персонаж имеет инвентарь, и разгрузку. В инвентаре хранятся объекты, не нуждающиеся в графическом представлении, например - патроны. В разгрузке в соответствующих слотах расположены объекты, которые можно взять в руки. Они прикреплены к модели персонажа и имеют графическое представление.</h6>
+											<h5>Реализация инвентаря и разгрузки</h5>
+											<ul>
+												<li>Словари, хронящие объекты в различных слотах.</li>
+												<li>Указатель на текущий экипированный объект.</li>
+												<li>Методы работы с разгрузкой и инвентарем.</li>
+												<li>Метод смены текущего экипированного объекта.</li>
+											</ul>
+											<div class="example-footer">
+												<h5>Основные инструменты и методы:</h5>
+												<p>C++, Enum, TMap, Delegate</p>
+											</div>
+										</div>
+									<div id="bg_2" class="background-image" style="/*background-image: url(img/shot.jpg);*/ z-index:-1; background-color:#d0e1ca "></div>
+									</div>
+									
+									<div id="item_3" class="item scroll-animated-from-right">
+										<div id="info_3" class="info-even">
+											<div class="container-mid">
+												<h4>Взаимодейсвтие с предметами</h4>
+											</div>
+										</div>
+										<div id="example_3" class="example-description">
+											<div class="example-header">
+												<div style="z-index:2" class="container-mid">
+													<h4>Взаимодейсвтие с предметами</h4>
+												</div>
+												<div class="background-image" style="/*background-image: url(img/shot.jpg);*/ z-index:0; background-color:#aec5aa"></div>
+											</div>
+											<img src="img/ItemInteract.gif" style="width: 90%; margin-bottom: 1vh;"  frameborder="0"/img>
+											<h5>Описание</h5>
+											<h6>Персонаж может взаимодействовать с предметами, реализующими интерфейс IInteractable. Они должны находиться на расстоянии не более N от точки взгляда персонажа. </h6>
+											<h5>Реализация интерфейс IInteractable</h5>
+											<ul>
+												<li>Методы на начало и конец пересечения взглядом персонажа триггера объекта.</li>
+												<li>Методы, возвращающие сообщение и название клавиши для взаимодействия с объектом. Нужно для появление и исчезновение виджета.</li>
+												<li>Метод для реализации взаимодействия.</li>
+											</ul>
+											<div class="example-footer">
+												<h5>Основные инструменты и методы</h5>
+												<p>C++, LineTrace, Interface, Widgets</p>
+											</div>
+										</div>
+									<div id="bg_3" class="background-image" style="/*background-image: url(img/shot.jpg);*/ z-index:-1; background-color:#d0e1ca "></div>
+									</div>
+									
+									<div id="item_4" class="item scroll-animated-from-left">
+										<div id="info_4" class="info-odd">
+											<div class="container-mid">
+												<h4>Передвижение</h4>
+											</div>
+										</div>
+										<div id="example_4" class="example-description">
+											<div class="example-header">
+												<div style="z-index:2" class="container-mid">
+													<h4>Передвижение</h4>
+												</div>
+												<div class="background-image" style="/*background-image: url(img/shot.jpg);*/ z-index:0; background-color:#aec5aa"></div>
+											</div>
+											<img src="img/ItemMove.gif" style="width: 90%; margin-bottom: 1vh;"  frameborder="0"/img>
+											<h5>Описание</h5>
+											<h6>Персонаж может передвигаться в трех состояниях: ходьба, бег и присяд. Плавные переходы между состояниями.</h6>
+											<h5>Реализация передвижения</h5>
+											<ul>
+												<li>Ходьба полностью стандартная.</li>
+												<li>Бег - увеличение параметра MaxWalkSpeed с использованием TimeLine.</li>
+												<li>Присяд - уменьшение параметра MaxWalkSpeed с использованием TimeLine. И реализация плавного присядания.</li>
+												<li>Подкат - переход между бегом и присядом (учитывает угол поверхности, по которой происходит подкат).</li>
+											</ul>
+											<h5>Реализация плавное присядание</h5>
+											<h6>Плавное присядание реализовано через TimeLine. В кастомном MovementComponent переопределны несколько методов, но главные это Crouch и Uncrouch. Где и происходит вся магия. </h6>
+											<div class="example-footer">
+												<h5>Основные инструменты и методы</h5>
+												<p>C++, TimeLine, CurveFloat</p>
+											</div>
+										</div>
+									<div id="bg_4" class="background-image" style="/*background-image: url(img/shot.jpg);*/ z-index:-1; background-color:#d0e1ca "></div>
+									</div>
+									
+									<div id="item_5" class="item scroll-animated-from-right">
+										<div id="info_5" class="info-even">
+											<div class="container-mid">
+												<h4>Виджеты</h4>
+											</div>
+										</div>
+										<div id="example_5" class="example-description">
+											<div class="example-header">
+												<div style="z-index:2" class="container-mid">
+													<h4>Виджеты</h4>
+												</div>
+												<div class="background-image" style="/*background-image: url(img/shot.jpg);*/ z-index:0; background-color:#aec5aa"></div>
+											</div>
+											<img src="img/ItemWidget.gif" style="width: 90%; margin-bottom: 1vh;"  frameborder="0"/img>
+											<h5>Описание</h5>
+											<h6>Реализованы различные меню и HUD.</h6>
+											<h5>Список выиджетов меню</h5>
+											<ul>
+												<li>Главное меню.</li>
+												<li>Меню настроек.</li>
+												<li>Меню отдыха.</li>
+												<li>Меню паузы.</li>
+											</ul>
+											<h5>Список выиджетов HUD</h5>
+											<ul>
+												<li>Виджет здоровья и брони.</li>
+												<li>Виджет патронов.</li>
+												<li>Виджет прицела.</li>
+												<li>Виджет взаимодейсвтия с интерактивным объектом.</li>
+												<li>Виджет взаимодейсвтия с объектом в руках.</li>
+											</ul>
+											<div class="example-footer">
+												<h5>Основные инструменты и методы</h5>
+												<p>C++, UserWidgets</p>
+											</div>
+										</div>
+									<div id="bg_5" class="background-image" style="/*background-image: url(img/shot.jpg);*/ z-index:-1; background-color:#d0e1ca "></div>
+									</div>
+									
+									<div id="item_6" class="item scroll-animated-from-left">
+										<div id="info_6" class="info-odd">
+											<div class="container-mid">
+												<h4>Искусственный интеллект</h4>
+											</div>
+										</div>
+										<div id="example_6" class="example-description">
+											<div class="example-header">
+												<div style="z-index:2" class="container-mid">
+													<h4>Искусственный интеллект</h4>
+												</div>
+												<div class="background-image" style="/*background-image: url(img/shot.jpg);*/ z-index:0; background-color:#aec5aa"></div>
+											</div>
+											<img src="img/ItemAI.gif" style="width: 90%; margin-bottom: 1vh;"  frameborder="0"/img>
+											<h5>Описание</h5>
+											<h6>Реализована турель с AI. Она имеет 4 состояния: сон, поиск, исследование и атака. В состоянии сна турель не двигается, но если персонаж пройдет перед ней, она начнет исследовать его и может начать атаковать. Если турель уже "разбудили" и она не видит цели, то начинает вращаться - осматриваться. Турель можно убить.</h6>
+											<div class="example-footer">
+												<h5>Основные инструменты и методы</h5>
+												<p>C++, PerceptionComponent</p>
+											</div>
+										</div>
+									<div id="bg_6" class="background-image" style="/*background-image: url(img/shot.jpg);*/ z-index:-1; background-color:#d0e1ca "></div>
+									</div>
+									
+									<div id="item_7" onclick="window.open('https://github.com/VasiliiPupishev/FinalDance');" class="item scroll-animated-from-right">
+										<div id="info_7" class="info-even">
+											<div class="container-mid">
+												<h4>Проект на GitHub <i class="fas fa-link"></i></h4>
+											</div>
+										</div>
+									<div id="bg_7" class="background-image" style="/*background-image: url(img/shot.jpg);*/ z-index:-1; background-color:#d0e1ca "></div>
+									</div>
+									
+									<!--<div id="item_8" class="item scroll-animated-from-left">
+										<div id="info_8" class="info-odd">
+											<div class="container-mid">
+												<h4>GAS</h4>
+											</div>
+										</div>
+										<div id="example_8" class="example-description">
+											<div class="example-header">
+												<div style="z-index:2" class="container-mid">
+													<h4>GAS</h4>
+												</div>
+												<div class="background-image" style="/*background-image: url(img/shot.jpg);*/ z-index:0; background-color:#aec5aa"></div>
+											</div>
+											<iframe src="https://www.youtube.com/embed/63RZSREVN5Y"  frameborder="0"></iframe>
+											<h5>Описание</h5>
+											<h6>Персонаж имеет инвентарь, и разгрузку. В инвентаре хранятся объекты, не нуждающиеся в графическом представлении, например - патроны. В разгрузке в соответствующих слотах расположены объекты, которые можно взять в руки. Они прикреплены к модели персонажа и имеют графическое представление.</h6>
+											<h5>Реализация инвентаря и разгрузки</h5>
+											<ul>
+												<li>Словари, хронящие объекты в различных слотах.</li>
+												<li>Указатель на текущий экипированный объект.</li>
+												<li>Методы работы с разгрузкой и инвентарем.</li>
+												<li>Метод смены текущего экипированного объекта.</li>
+											</ul>
+											<div class="example-footer">
+												<h5>Основные инструменты и методы</h5>
+												<p>C++, Hitscan</p>
+											</div>
+										</div>
+									<div id="bg_8" class="background-image" style="/*background-image: url(img/shot.jpg);*/ z-index:-1; background-color:#d0e1ca "></div>
+									</div> -->
+								</div>
+							</section>
+						</p>
+					</div>
+				<div class="background-image" style="background-image: url(../img/maneq.png); z-index:-1; background-color:#aec5aa"></div>
+                </section>
+
+				<section style="background-color: #ecf5ed ; border-radius:1rem; margin-top: 10vh;" id="service">
+                    <h3 style="padding-top: 1vh; padding-bottom: 1vh;" class="headline scroll-animated-from-right">Что я могу и умею?</h3>
+					<p style="margin:0; font-size: 2.2rem; padding-bottom:1vh;" class="scroll-animated-from-right">
+						Unreal Engine, С++ (ООП), Blueprint, GAS, Python 3, Bash
+					</p>
+					<p style="margin:0; font-size: 2.2rem; padding-bottom:1vh;" class="scroll-animated-from-left">
+						Git, Perforce
+					</p>
+                </section>
+
+                <section style="background-color: #ecf5ed ; border-radius:1rem; margin-top: 10vh;" id="about">
+                    <h3 style="padding-top:1vh; padding-bottom:1vh;" class="headline scroll-animated-from-left">Языки</h3>
+						<p style="margin:0; font-size: 2.2rem; padding-bottom:1vh;" class="scroll-animated-from-right">
+							🇷🇺 Русский язык <strong>(Native)</strong>
+						</p>
+						<p style="margin:0; font-size: 2.2rem; padding-bottom:1vh;" class="scroll-animated-from-left">
+							🇬🇧 Английский язык <strong>(B1 Intermediate)</strong>
+						</p>
+                </section>
+
+                <section style="background-color: #ecf5ed ; border-radius:1rem; margin-top: 10vh; height:fit-content;" id="work">
+                    <h3 style="padding-top: 1vh; padding-bottom: 1vh;" class="headline scroll-animated-from-right">Опыт работы</h3>
+                    <div class="showcase">
+                        <div style="margin-bottom: 1vh;" class="item scroll-animated-from-left">
+							<div class="info-odd">
+								<div class="container-mid">
+									<h3>ООО "Первые"</h3>
+									<h4>Технический специалист</h4>
+									<p>Март 2019 - Март 2020</p>
+									<h4>Задачи:</h4>
+									<p>Разработка сайта, Техническая консультация</p>
+									<h4>Стэк:</h4>
+									<p>HTML, CSS, Python 3, Bash, JavaScript</p>
+								</div>
+							</div>
+							<div class="background-image" style="background-image: url(img/work1.png); background-color: #d0e1ca;"></div>
+                        </div>
+                        <div style="margin-bottom: 1vh;" class="item scroll-animated-from-right">
+							<div class="info-even">
+								<div class="container-mid">
+									<h3>АО "Механобр инжиниринг"</h3>
+									<h4>Инженер</h4>
+									<p style="color:#000;">Март 2020 - Настоящее время</p>
+									<h4>Задачи:</h4>
+									<p>BIM 3D моделирование, Разработка утилит</p>
+									<h4>Стэк:</h4>
+									<p>Revit, Inventor, Naviswork, Python 3, Bash</p>
+								</div>
+							</div>
+							<div class="background-image" style="background-image: url(img/work2.png); background-color: #d0e1ca;"></div>
+                        </div>
+						<br>
+                    </div>
+                </section>
+                
+                <section style=" background-color: #ecf5ed ; border-radius:1rem; margin-top: 10vh;" id="contact">
+                    <h3 style="padding-top:1vh; padding-bottom:1vh;" class="headline scroll-animated-from-right">Связаться со мной</h3>
+                    <ul class="contact-list">
+                        <li><a href="tel:+79221162341">+7 922 116-23-41</a></li>
+                        <li><a href="https://t.me/VasiliiPupishev">@vasilii</a></li>
+                        <li><a href="mailto:vasilipupyshev@gmail.com">vasilipupyshev@gmail.com</a></li>
+                    </ul>
+                </section>
+                
+                <section style="background-color: #ecf5ed ; border-radius:1rem; margin-top: 10vh;" id="footer">
+                    <ul style="padding-top:1vh;padding-bottom:1vh;" class="social-icons scroll-animated-from-right">
+                        <li><a href=" https://wa.me/+79221162341"><i class="fab fa-whatsapp"></i></a></li>
+                        <li><a href="https://github.com/VasiliiPupishev"><i class="fa fa-github"></i></a></li>
+                        <li><a href="https://t.me/VasiliiPupishev"><i class="fa fa-telegram"></i></a></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body> 
+    
+    
+</html>
