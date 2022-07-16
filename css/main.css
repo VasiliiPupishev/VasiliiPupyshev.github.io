@@ -53,17 +53,20 @@ body
 	margin: 0;
 }
 
-#item-name
+#item .container-mid .item-place .item-name
 {
-	font-size: min(8vw, 50px);
+	font-size: min(4vw, 30px);
 	color: #b3b3b3;
+	margin: 1vh;
 }
 
-#item .spacer
+
+#spacer
 {
-	height: calc(2 * 100vh / 7);
+	height: 10vh;
+	margin: 0;
+	padding: 0;
 }
-
 
 /*++++++++++++++++++++++++++++++++++++++*/
 #intro
