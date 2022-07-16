@@ -36,6 +36,17 @@ body
     overflow: hidden;
 }
 
+#item .container-mid .description
+{
+}
+
+#item .container-mid .description-text
+{
+	font-size: min(5vw, 35px);
+	color: #b3b3b3;
+	text-align: center;
+}
+
 #item .container-mid .item-place
 {
 	width: 100%;
@@ -57,7 +68,7 @@ body
 {
 	font-size: min(4vw, 30px);
 	color: #b3b3b3;
-	margin: 1vh;
+	margin-top: 2vh;
 }
 
 
