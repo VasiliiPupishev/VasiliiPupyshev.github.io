@@ -36,9 +36,6 @@ body
 	height: 100vh;
 	display: flex;
     align-items: center;
-	
-	
-    display: inline-table;
     overflow: hidden;
 }
 
@@ -54,9 +51,8 @@ body
 #item .container-mid .item-place .item-image
 {
     position: relative;
-	max-width: 800px;
-	width: 90vw;
-	height: auto;
+	width: auto;
+	max-height: 85vh;
 	max-height: 80vh;
 	margin: 2vh;
 }
