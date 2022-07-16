@@ -22,7 +22,7 @@ body
 #item
 {
 	position: relative;
-    height: 100vh;
+    height: auto;
 	max-width: 860px;
 	margin: auto;
 	background:#000;
@@ -32,10 +32,7 @@ body
 {
     position: relative;
     max-width: 860px;
-	margin: auto;
-	height: 100vh;
 	display: flex;
-    align-items: center;
     overflow: hidden;
 }
 
@@ -51,10 +48,9 @@ body
 #item .container-mid .item-place .item-image
 {
     position: relative;
-	width: auto;
-	max-height: 85vh;
-	max-height: 80vh;
-	margin: 2vh;
+	max-width: 90vw;
+	height: auto;
+	margin: 0;
 }
 
 #item-name
